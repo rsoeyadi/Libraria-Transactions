@@ -104,6 +104,18 @@ def delete_transaction():
 
     return redirect('/transactions')
 
+# remove all transactions for a book
+@app.route('/transactions_books', methods=['DELETE'])
+def delete_transaction_book():
+    isbn = request.form['isbn']
+
+    cur = connection.cursor()
+    cur.execute(f"DELETE FROM transactions WHERE ISBN = '{isbn}'")
+    cur.close()
+
+    return redirect('/transactions')
+
+
 @app.get("/")
 def root():
     # cur = connection.cursor()
