@@ -115,7 +115,6 @@ def delete_transaction_book():
 
     return redirect('/transactions')
 
-
 @app.get("/")
 def root():
     # cur = connection.cursor()
