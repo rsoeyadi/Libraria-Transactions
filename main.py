@@ -125,5 +125,5 @@ def root():
     return {"message": "This microservice is for our library catalog."}
 
 if __name__ == "__main__":
-    app.run(debug=True)
-    #app.run(app, host="0.0.0.0", port=8000)
+    # app.run(debug=True)
+    app.run(host="0.0.0.0", port=8000)
